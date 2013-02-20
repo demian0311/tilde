@@ -7,7 +7,6 @@ platform='unknown'
 unamestr=`uname`
 if [[ "$unamestr" == 'Linux' ]]; then
    echo 'loading config for Linux OS'
-   PS1="demian@\h \w>"
    alias ls='ls -hlt --color'
    export LOCAL_PUB=~/UNDEFINED
 elif [[ "$unamestr" == 'Darwin' ]]; then
@@ -98,6 +97,8 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
    export MAVEN_OPTS="-Xmx2048m -Xms2048m -Dsurefire.useFile=false"
 
 fi
+
+PS1="\u@\h \w>"
 
 [ -z "$PS1" ] && return # If not running interactively, don't do anything
 
