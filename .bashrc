@@ -9,6 +9,10 @@ if [[ "$unamestr" == 'Linux' ]]; then
    echo 'loading config for Linux OS'
    alias ls='ls -hlt --color'
    export LOCAL_PUB=~/UNDEFINED
+
+   #running on prod servers
+   export PATH=$PATH:/usr/local/bin/
+
 elif [[ "$unamestr" == 'Darwin' ]]; then
    echo '***********************************************'
    echo '* LOCAL MAC CONFIG                            *'
@@ -101,7 +105,7 @@ fi
 PS1="\u@\h \w>"
 
 [ -z "$PS1" ] && return # If not running interactively, don't do anything
-
+5432/tcp filtered postgresql
 # vi mode editing on the commandline
 set -o vi 
 
