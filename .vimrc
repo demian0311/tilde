@@ -1,4 +1,5 @@
 " Demian L. Neidetcher - the 2nd .vimrc
+
       
 " Settings
 set autoindent        " always do auto indent
