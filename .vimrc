@@ -103,7 +103,5 @@ au BufRead,BufNewFile *.sbt set filetype=scala
 map nt :NERDTreeToggle<CR>
 map ntb :Bookmark
 
-colorscheme desert
-
 syntax on
-colorscheme darkblue
+colorscheme desert

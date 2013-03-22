@@ -101,16 +101,18 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
 
    export MAVEN_OPTS="-Xmx2048m -Xms2048m -Dsurefire.useFile=false"
 
+   alias jekyll='/usr/local/Cellar/ruby/2.0.0-p0/bin/jekyll'
+
 fi
 
 PS1="\u@\h \w>"
 
 [ -z "$PS1" ] && return # If not running interactively, don't do anything
-5432/tcp filtered postgresql
 # vi mode editing on the commandline
 set -o vi 
 
 # bash history
+export HISTSIZE=5000
 export HISTCONTROL=ignoredups
 export HISTCONTROL=ignoreboth
 export HISTIGNORE="&:ls:[bf]g:exit"
@@ -135,6 +137,8 @@ complete -W "$(echo $(grep '^ssh ' .bash_history | sort -u | sed 's/^ssh //'))" 
 complete -W "$(echo $(grep "Host " ~/.ssh/config | awk '{print $2}' | tr "\n" " "))" ssh
 
 export PATH="~/code/twc/potion/bin:$PATH"
+alias jump="~/code/twc/potion/bin/jump"
+#. /Users/demian/code/twc/devops/bin/jump 
 
 if [ -f ~/code/twc/devops/scripts/liger_aliases.sh ]; then
    .  ~/code/twc/devops/scripts/liger_aliases.sh 
